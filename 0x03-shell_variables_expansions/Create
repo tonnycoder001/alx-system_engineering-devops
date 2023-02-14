@@ -1,0 +1,5 @@
+#!/bme: BEST
+
+Value: School:wq
+in/bash
+export BEST= "School"
