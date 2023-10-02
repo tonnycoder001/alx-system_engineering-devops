@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#a Bash script that uses a for loop to display the content of the current directory in a list format
+
+for file in *
+do
+	echo "$file" | cut -d '-' -f2
+done
