@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Get the list of all processes using 'ps' command
+
+ps -auxf | less

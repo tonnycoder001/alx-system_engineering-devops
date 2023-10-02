@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# SIGTERM signal that handle display the message "I am invincible!!!",and 
+#proceed to kill the "7-highlander" process using pkill -f.
+
+trap 'echo "I am invincible!!!"' SIGTERM
+
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+done

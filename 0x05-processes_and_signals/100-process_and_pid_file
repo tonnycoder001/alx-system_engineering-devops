@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# script will create a PID file named /var/run/myscript.pid containing its own PID
+
+function handle_sigterm_sigquit
+{
+echo "I hate the kill command"
+echo "Deleting the PID file and terminating..."
+rm -f /var/run/myscript.pid
+exit 0
+}
+
+# Function to handle SIGINT signal
+function handle_sigint
+{
+	echo "Y U no love me?!"
+}
+
+# Trap SIGTERM, SIGQUIT, and SIGINT signals and call the handler functions
+trap handle_sigterm_sigquit SIGTERM SIGQUIT
+trap handle_sigint SIGINT
+
+# Create the PID file
+echo $$ > /var/run/myscript.pid
+
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done
